@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
     const [products, setProducts] = useState([
-        { id: 1, name: "신규 상품 A", price: "₩12,000", status: "판매중", url: "https://example.com/product-a" },
-        { id: 2, name: "신규 상품 B", price: "₩8,500", status: "품절", url: "https://example.com/product-b" },
+        { id: 1, name: "신규 상품 A", price: "₩12,000", status: "판매중", url: "https://yourstore.com/product-a" },
+        { id: 2, name: "신규 상품 B", price: "₩8,500", status: "품절", url: "https://yourstore.com/product-b" },
     ]);
 
     const [newProduct, setNewProduct] = useState({ name: "", price: "", status: "판매중", url: "" });
@@ -51,7 +51,7 @@ function App() {
                     name="url"
                     value={newProduct.url}
                     onChange={handleChange}
-                    placeholder="URL (예: https://example.com)"
+                    placeholder="URL (예: https://yourstore.com/product-a)"
                     required
                     style={{ marginRight: "10px" }}
                 />
@@ -65,7 +65,7 @@ function App() {
             <ul>
                 {products.map((p) => (
                     <li key={p.id} style={{ marginBottom: "10px" }}>
-                        <a href={p.url} target="_blank" style={{ color: "black", textDecoration: "none" }}>
+                        <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ color: "black", textDecoration: "none" }}>
                             <strong>{p.name}</strong> / {p.price} / <span style={{ color: p.status === "판매중" ? "green" : "red" }}>{p.status}</span>
                         </a>
                         <button onClick={() => handleDeleteProduct(p.id)} style={{ marginLeft: "10px" }}>삭제</button>
