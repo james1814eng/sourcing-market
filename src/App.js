@@ -54,14 +54,20 @@ function App() {
             </form>
             <div className="product-list">
                 {products.map((product) => (
-                    <div className="product-card" key={product.id}>
+                    <a 
+                        href={product.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="product-card" 
+                        key={product.id}
+                    >
                         <img src={product.image} alt={product.name} />
                         <h2>{product.name}</h2>
                         <p>{product.price}</p>
                         <p className={product.status === "품절" ? "sold-out" : "on-sale"}>{product.status}</p>
                         <p>{product.description}</p>
                         <p>{product.features}</p>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
