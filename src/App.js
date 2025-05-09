@@ -55,13 +55,13 @@ function App() {
             <div className="product-list">
                 {products.map((product) => (
                     <a 
-                        href={product.url} 
+                        href={product.url.startsWith('http') ? product.url : `https://${product.url}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="product-card" 
                         key={product.id}
                     >
-                        <img src={product.image} alt={product.name} />
+                        {product.image && <img src={product.image} alt={product.name} />}
                         <h2>{product.name}</h2>
                         <p>{product.price}</p>
                         <p className={product.status === "품절" ? "sold-out" : "on-sale"}>{product.status}</p>
