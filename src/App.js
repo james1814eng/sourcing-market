@@ -1,77 +1,24 @@
-import React, { useState } from 'react';
-import './App.css';
-
 function App() {
     const [products, setProducts] = useState([
-        { id: 1, name: "신규 상품 A", price: "₩12,000", status: "판매중", url: "https://yourstore.com/product-a" },
-        { id: 2, name: "신규 상품 B", price: "₩8,500", status: "품절", url: "https://yourstore.com/product-b" },
+        { id: 1, name: "신규 상품 A", price: "₩12,000", status: "판매중" },
+        { id: 2, name: "신규 상품 B", price: "₩8,500", status: "품절" },
+        { id: 3, name: "테스트상품", price: "₩10,000", status: "판매중" },
     ]);
 
-    const [newProduct, setNewProduct] = useState({ name: "", price: "", status: "판매중", url: "" });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setNewProduct((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleAddProduct = (e) => {
-        e.preventDefault();
-        const newId = products.length + 1;
-        setProducts([...products, { id: newId, ...newProduct }]);
-        setNewProduct({ name: "", price: "", status: "판매중", url: "" });
-    };
-
-    const handleDeleteProduct = (id) => {
-        const updatedProducts = products.filter(product => product.id !== id);
-        setProducts(updatedProducts);
-    };
-
     return (
-        <div style={{ padding: "30px", fontFamily: "Arial" }}>
-            <h1 style={{ color: "#1e88e5" }}>소싱마켓 - 신규 상품 리스트</h1>
-
-            <form onSubmit={handleAddProduct} style={{ marginTop: "20px", marginBottom: "30px" }}>
-                <input
-                    name="name"
-                    value={newProduct.name}
-                    onChange={handleChange}
-                    placeholder="상품명"
-                    required
-                    style={{ marginRight: "10px" }}
-                />
-                <input
-                    name="price"
-                    value={newProduct.price}
-                    onChange={handleChange}
-                    placeholder="가격 (예: ₩10,000)"
-                    required
-                    style={{ marginRight: "10px" }}
-                />
-                <input
-                    name="url"
-                    value={newProduct.url}
-                    onChange={handleChange}
-                    placeholder="URL (예: https://yourstore.com/product-a)"
-                    required
-                    style={{ marginRight: "10px" }}
-                />
-                <select name="status" value={newProduct.status} onChange={handleChange} style={{ marginRight: "10px" }}>
-                    <option value="판매중">판매중</option>
-                    <option value="품절">품절</option>
-                </select>
-                <button type="submit" style={{ marginLeft: "10px" }}>추가</button>
-            </form>
-
-            <ul>
-                {products.map((p) => (
-                    <li key={p.id} style={{ marginBottom: "10px" }}>
-                        <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ color: "black", textDecoration: "none" }}>
-                            <strong>{p.name}</strong> / {p.price} / <span style={{ color: p.status === "판매중" ? "green" : "red" }}>{p.status}</span>
-                        </a>
-                        <button onClick={() => handleDeleteProduct(p.id)} style={{ marginLeft: "10px" }}>삭제</button>
-                    </li>
+        <div className="container">
+            <h1>소싱마켓 - 신규 상품 리스트</h1>
+            <div className="product-list">
+                {products.map((product) => (
+                    <div className="product-card" key={product.id}>
+                        <h2>{product.name}</h2>
+                        <p>{product.price}</p>
+                        <p className={product.status === "품절" ? "sold-out" : "on-sale"}>
+                            {product.status}
+                        </p>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
