@@ -9,7 +9,9 @@ function App() {
         url: '',
         image: '',
         description: '',
-        features: '',
+        usage: '',
+        company: '',
+        contact: '',
         status: '판매중',
     });
 
@@ -28,7 +30,9 @@ function App() {
             url: '',
             image: '',
             description: '',
-            features: '',
+            usage: '',
+            company: '',
+            contact: '',
             status: '판매중',
         });
     };
@@ -45,7 +49,9 @@ function App() {
                 <input name="url" placeholder="URL (예: https://yourstore.com)" value={newProduct.url} onChange={handleChange} />
                 <input name="image" placeholder="이미지 URL" value={newProduct.image} onChange={handleChange} />
                 <textarea name="description" placeholder="상품 설명" value={newProduct.description} onChange={handleChange} />
-                <textarea name="features" placeholder="상품 특성" value={newProduct.features} onChange={handleChange} />
+                <textarea name="usage" placeholder="상품 용도" value={newProduct.usage} onChange={handleChange} />
+                <input name="company" placeholder="회사 명" value={newProduct.company} onChange={handleChange} />
+                <input name="contact" placeholder="담당자 연락처" value={newProduct.contact} onChange={handleChange} />
                 <select name="status" value={newProduct.status} onChange={handleChange}>
                     <option value="판매중">판매중</option>
                     <option value="품절">품절</option>
@@ -66,7 +72,9 @@ function App() {
                         <p>{product.price}</p>
                         <p className={product.status === "품절" ? "sold-out" : "on-sale"}>{product.status}</p>
                         <p>{product.description}</p>
-                        <p>{product.features}</p>
+                        <p>{product.usage}</p>
+                        <p>회사: {product.company}</p>
+                        <p>연락처: {product.contact}</p>
                     </a>
                 ))}
             </div>
