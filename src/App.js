@@ -70,6 +70,9 @@ function App() {
                   </div>
                 ))}
               </div>
+              <Link to="/add">
+                <button className="add-button">상품 등록하기</button>
+              </Link>
             </div>
           }
         />
