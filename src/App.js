@@ -33,7 +33,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* 메인 페이지 */}
+        {/* 메인 페이지 (시작 화면) */}
         <Route
           path="/"
           element={
@@ -70,6 +70,31 @@ function App() {
                   </div>
                 ))}
               </div>
+            </div>
+          }
+        />
+        
+        {/* 상품 등록 페이지 */}
+        <Route
+          path="/add"
+          element={
+            <div className="container">
+              <h1>소싱마켓 - 신규 상품 등록</h1>
+              <form>
+                <input type="text" placeholder="상품명" />
+                <input type="text" placeholder="가격 (예: ₩10,000)" />
+                <input type="text" placeholder="URL (예: https://yourstore.com)" />
+                <input type="text" placeholder="이미지 URL" />
+                <textarea placeholder="상품 설명"></textarea>
+                <textarea placeholder="상품 용도"></textarea>
+                <input type="text" placeholder="회사 명" />
+                <input type="text" placeholder="담당자 연락처" />
+                <select>
+                  <option>판매중</option>
+                  <option>품절</option>
+                </select>
+                <button type="submit">추가</button>
+              </form>
             </div>
           }
         />
