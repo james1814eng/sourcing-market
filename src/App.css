@@ -1,24 +1,56 @@
 /* src/App.css */
-form {
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+nav {
   margin-bottom: 20px;
 }
 
-input,
-select,
-button {
-  margin: 10px 0;
-  padding: 10px;
-  width: 90%;
+nav a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-button {
+nav a:hover {
+  background-color: #0056b3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  max-width: 400px;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button[type="submit"] {
   background-color: #007bff;
-  color: #ffffff;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
+button[type="submit"]:hover {
   background-color: #0056b3;
 }
