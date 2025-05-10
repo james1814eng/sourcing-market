@@ -1,87 +1,24 @@
 /* src/App.css */
-.container {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* 제목 스타일 */
-h1 {
-  font-size: 2rem;
-  color: #333;
+form {
   margin-bottom: 20px;
 }
 
-/* 상품 리스트 스타일 */
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+input,
+select,
+button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 90%;
 }
 
-/* 상품 카드 스타일 */
-.product-card {
-  width: 300px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-/* 이미지 스타일 */
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-/* 상품 등록하기 버튼 스타일 */
-.add-product-button {
-  display: block;
-  margin: 20px auto 0 auto;
-  padding: 12px 30px;
+button {
   background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.add-product-button:hover {
+button:hover {
   background-color: #0056b3;
 }
-
-/* 시작 버튼 스타일 */
-.start-button {
-  margin-top: 20px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.start-button:hover {
-  background-color: #0056b3;
-}
-
-/* 상품 등록 폼 스타일 */
-.form-container {
-  width: 60%;
-  margin: 0 auto;
-  text-align: left;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
